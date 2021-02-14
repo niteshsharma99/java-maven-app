@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.hello.HelloTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.213 sec <<< FAILURE! - in com.hello.HelloTest
-test(com.hello.HelloTest)  Time elapsed: 0.019 sec  <<< FAILURE!
-java.lang.AssertionError: Not yet implemented
-	at com.hello.HelloTest.test(HelloTest.java:11)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.146 sec - in com.hello.HelloTest

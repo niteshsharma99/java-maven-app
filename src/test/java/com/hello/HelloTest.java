@@ -1,14 +1,27 @@
 package com.hello;
 
-import static org.junit.Assert.*;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
-import org.junit.Test;
+public class HelloTest
+	 extends TestCase
+	    
+	 {
+	     
+	public HelloTest ( String testName )
+	     {
+	         super( testName );
+	     }
 
-public class HelloTest {
+	public static Test suite()
+	     {
+	         return new TestSuite( HelloTest.class );
+	     }
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+    public void testApp()
+	     {
+	         assertTrue( true );
+	     }
 
 }

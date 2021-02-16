@@ -1,27 +1,12 @@
-#!groovy
+node {
 
-pipeline {
-  agent none
-  stages {
-    stage('Maven Install') {
-	agent any
-      	steps {
-		sh 'mvn -f pom.xml clean install'
-      	}
+    checkout scm
+
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_id') {
+
+        def customImage = docker.build("nitesh99sharma/dockerwebapp")
+
+        /* Push the container to the custom Registry */
+        customImage.push()
     }
-    stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t nitesh99sharma/hello-world:1.0 .'
-      }
-    }
-	stage ('Docker Push') {
-      agent any
-      steps {
-        withDockerRegistry([ credentialsId: "dockerhub_id", url: "" ]) {
-          sh 'docker push nitesh99sharma/hello-world:2.0'
-        }
-      }
-	}
-  }
 }

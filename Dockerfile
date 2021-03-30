@@ -4,6 +4,4 @@ RUN mkdir /App
 
 COPY  target/hello-0.0.1-SNAPSHOT.jar /App/hello.jar
 
-EXPOSE 3333
-
-CMD java -jar /App/hello.jar
+ENTRYPOINT [ "java" , "-jar" , "/App/hello.jar" ]             ]
